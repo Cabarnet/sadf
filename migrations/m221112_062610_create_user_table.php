@@ -10,7 +10,7 @@ class m221112_062610_create_user_table extends Migration
 {
     public function up()
     {
-        $this->createTable('user', [
+        $this->createTable('user11', [
             'id' => $this->primaryKey(),
             'username' => $this->string()->notNull()->unique(),
             'auth_key' => $this->string(32)->notNull(),
