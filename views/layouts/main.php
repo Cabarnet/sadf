@@ -28,26 +28,27 @@ AppAsset::register($this);
 <header>
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => "<img height='50px' src='../web/Logotype.png'>",
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
+            'class' => 'navbar navbar-expand-md navbar-light bg-light fixed-top',
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav'],
+        'options' => ['class' => 'navbar-nav alert-link mx-auto w-75 d-flex justify-content-between'],
         'items' => [
             ['label' => 'Домашняя страница', 'url' => ['/site/index']],
             ['label' => 'Челленджи', 'url' => ['task/index']],
-            ['label' => 'Что это такое?', 'url' => ['/site/about']],
+            ['label' => 'Кто мы?', 'url' => ['/site/about']],
+            ['label' => 'Регистрация', 'url' => ['/site/signup']],
             //['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
-                ['label' => 'Логин', 'url' => ['/site/login']]
+                ['label' => 'Войти', 'url' => ['/site/login']]
             ) : (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
                 . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    'Выйти',
                     ['class' => 'btn btn-link logout']
                 )
                 . Html::endForm()
