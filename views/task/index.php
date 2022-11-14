@@ -10,20 +10,25 @@ use yii\grid\GridView;
 /** @var app\models\TaskSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Tasks';
+$this->title = 'Челленджи';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="task-index">
+    <div style="display: flex; flex-direction: row; width: 1110px; justify-content: space-between; margin-top: 30px; margin-bottom: 30px">
+        <h1><?= Html::encode($this->title) ?></h1>
 
-    <h1><?= Html::encode($this->title) ?></h1>
+        <p style="margin-top: 9px">
+            <?= Html::a('Создать новый', ['create'], ['class' => 'btn btn-success']) ?>
+        </p>
+    </div>
 
-    <p>
-        <?= Html::a('Create Task', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <div style="width: 1110px; height: 200px; border-radius: 30px; background-color: #d3fccb; border: 2px solid #28a745;">
+
+    </div>
 
     <?php //echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
+    <?/*= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -44,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                  }
             ],
         ],
-    ]); ?>
+    ]); */?>
 
 
 </div>

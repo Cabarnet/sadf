@@ -28,14 +28,15 @@ AppAsset::register($this);
 <header>
     <?php
     NavBar::begin([
-        'brandLabel' => "<img height='50px' src='../web/Logotype.png'>",
+        'brandLabel' => "<img height='45px' src='../web/Logotype.png'>",
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar navbar-expand-md navbar-light bg-light fixed-top',
+            'class' => 'navbar-expand-md navbar-light bg-light fixed-top ',
+            'style' => 'font-family: sans-serif; font-size: 18px; font-weight: 200; padding: 0px',
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav alert-link mx-auto w-75 d-flex justify-content-between'],
+        'options' => ['class' => 'navbar-nav mx-auto w-75 d-flex justify-content-between ml-0'],
         'items' => [
             ['label' => 'Домашняя страница', 'url' => ['/site/index']],
             ['label' => 'Челленджи', 'url' => ['task/index']],

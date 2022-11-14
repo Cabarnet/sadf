@@ -62,7 +62,7 @@ class Task extends \yii\db\ActiveRecord
             'description' => 'Описание',
             'id_difficulty' => 'Сложность',
             'id_prize' => 'Приз',
-            'id_descipline' => 'Десциплина',
+            'id_descipline' => 'Дисциплина',
             'id_chat' => 'Чат',
         ];
     }
