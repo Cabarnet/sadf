@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_user')->textInput() ?>
+    <?= $form->field($model, 'user')->textInput() ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
@@ -20,11 +20,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'difficulty')->dropDownList(['-','Легкий','Средний','Сложный'])->label('Сложность') ?>
 
-    <?= $form->field($model, 'id_prize')->textInput() ?>
+    <?= $form->field($model, 'prize')->dropDownList(['-','4','5'])->label('Оценка') ?>
 
-    <?= $form->field($model, 'id_descipline')->textInput() ?>
-
-    <?= $form->field($model, 'id_chat')->textInput() ?>
+    <?= $form->field($model, 'descipline')->dropDownList(['-', 'Высшая математика', 'Программирование С#', 'Программирование С++', 'Программирование Python', 'Графический дизайн'])->label('Дисциплина') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

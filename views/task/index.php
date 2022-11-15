@@ -11,7 +11,7 @@ use yii\grid\GridView;
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Челленджи';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="task-index">
     <div style="display: flex; flex-direction: row; width: 1110px; justify-content: space-between; margin-top: 30px; margin-bottom: 30px">
@@ -22,13 +22,11 @@ $this->params['breadcrumbs'][] = $this->title;
         </p>
     </div>
 
-    <div style="width: 1110px; height: 200px; border-radius: 30px; background-color: #E8FFE8; border: 1px solid #28a745;">
+    <div style="width: 1110px; height: 200px; border-radius: 30px; background-color: #E8FFE8;">
 
     </div>
 
-    <?php //echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?/*= GridView::widget([
+    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -49,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
                  }
             ],
         ],
-    ]); */?>
+    ]); ?>
 
 
 </div>
