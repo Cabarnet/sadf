@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'id_difficulty')->textInput() ?>
+    <?= $form->field($model, 'difficulty')->dropDownList(['-','Легкий','Средний','Сложный'])->label('Сложность') ?>
 
     <?= $form->field($model, 'id_prize')->textInput() ?>
 

@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </p>
     </div>
 
-    <div style="width: 1110px; height: 200px; border-radius: 30px; background-color: #d3fccb; border: 2px solid #28a745;">
+    <div style="width: 1110px; height: 200px; border-radius: 30px; background-color: #E8FFE8; border: 1px solid #28a745;">
 
     </div>
 
