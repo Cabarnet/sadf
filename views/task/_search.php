@@ -14,21 +14,22 @@ use yii\widgets\ActiveForm;
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
-    <?php // echo $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'id_user') ?>
+    <?= $form->field($model, 'id') ?>
+
+    <?= $form->field($model, 'user') ?>
 
     <?= $form->field($model, 'name') ?>
 
     <?= $form->field($model, 'description') ?>
 
-    <?= $form->field($model, 'id_difficulty') ?>
+    <?= $form->field($model, 'difficulty') ?>
 
-    <?php // echo $form->field($model, 'id_prize') ?>
+    <?php // echo $form->field($model, 'prize') ?>
 
-    <?php // echo $form->field($model, 'id_descipline') ?>
+    <?php // echo $form->field($model, 'discipline') ?>
 
-    <?php // echo $form->field($model, 'id_chat') ?>
+    <?php // echo $form->field($model, 'chat') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

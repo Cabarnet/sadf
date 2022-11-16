@@ -26,18 +26,18 @@ $this->title = 'Вход';
         ],
     ]); ?>
 
-        <?= $form->field($model, 'email')->textInput(['style'=>'border-color: #ced4da; background-image: none;'])?>
+        <?= $form->field($model, 'email')->textInput(['style'=>'border-color: #ced4da; background-image: none;'])->label('Почта')?>
 
-        <?= $form->field($model, 'password')->passwordInput(['style'=>'border-color: #ced4da; background-image: none;']) ?>
+        <?= $form->field($model, 'password')->passwordInput(['style'=>'border-color: #ced4da; background-image: none;'])->label('Пароль') ?>
 
         <?= $form->field($model, 'rememberMe')->checkbox([
             'template' => "<div class=\"offset-lg-0 ml-3 col-lg-3 custom-control custom-checkbox\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
-        ]) ?>
+        ])->label('Запомнить меня') ?>
 
         <div class="form-group">
             <div class="offset-lg-0 col-lg-15">
-                <a href="http://sadf/web/index.php?r=site%2Fsignup" class="btn btn-light bg-light">Зарегистрироваться</a>
-                <?= Html::submitButton('Войти', ['class' => 'btn btn-success col-lg-4', 'name' => 'login-button']) ?>
+                <?= Html::submitButton('Войти', ['class' => 'btn btn-success col-lg-5', 'name' => 'login-button']) ?>
+                <a href="http://sadf:8080/web/index.php?r=site%2Fsignup" class="btn text-success">Зарегистрироваться</a>
             </div>
         </div>
 

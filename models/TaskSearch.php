@@ -17,8 +17,8 @@ class TaskSearch extends Task
     public function rules()
     {
         return [
-            [['id', 'id_user', 'id_difficulty', 'id_prize', 'id_descipline', 'id_chat'], 'integer'],
-            [['name', 'description'], 'safe'],
+            [['id'], 'integer'],
+            [['user', 'name', 'description', 'difficulty', 'prize', 'discipline', 'chat'], 'safe'],
         ];
     }
 
@@ -59,15 +59,15 @@ class TaskSearch extends Task
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'id_user' => $this->id_user,
-            'id_difficulty' => $this->id_difficulty,
-            'id_prize' => $this->id_prize,
-            'id_descipline' => $this->id_descipline,
-            'id_chat' => $this->id_chat,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'description', $this->description]);
+        $query->andFilterWhere(['like', 'user', $this->user])
+            ->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'difficulty', $this->difficulty])
+            ->andFilterWhere(['like', 'prize', $this->prize])
+            ->andFilterWhere(['like', 'discipline', $this->discipline])
+            ->andFilterWhere(['like', 'chat', $this->chat]);
 
         return $dataProvider;
     }
