@@ -28,7 +28,6 @@ $this->title = 'Челленджи';
         </p>
     </div>
 
-
     <?php foreach($row as $item){
             if ($item["difficulty"] == 0) $item["difficulty"] = "Не указана";
             if ($item["difficulty"] == 1) $item["difficulty"] = "Легкий";
@@ -61,7 +60,8 @@ $this->title = 'Челленджи';
             <div style="display: flex;  flex-direction: row; width: 1010px; height: 40px; justify-content: space-between;">
                 <h3 style="font-size: 28px;"><?=$item["name"]?></h3>
                 <div style="width: 200px;">
-                    <a class="btn btn-outline-danger">Удалить</a>
+                    <a class="btn btn-outline-danger" href="http://sadf:8080/web/index.php?r=task%2Fdelete&id=<?=$item["id"]?>" title="delete" aria-label="Delete"
+                       data-pjax="0" data-confirm="Вы действительно хотите удалить челлендж: <?=$item["name"]?> ?" data-method="post">Удалить</a>
                     <a class="btn btn-outline-dark">Подробнее</a>
                 </div>
             </div>
@@ -75,6 +75,7 @@ $this->title = 'Челленджи';
             </div>
         </div>
     <?php }?>
+
 
 
 </div>

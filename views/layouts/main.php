@@ -41,8 +41,7 @@ AppAsset::register($this);
             ['label' => 'Домашняя страница', 'url' => ['/site/index']],
             ['label' => 'Челленджи', 'url' => ['task/index']],
             ['label' => 'Кто мы?', 'url' => ['/site/about']],
-            ['label' => 'Регистрация', 'url' => ['/site/signup']],
-            //['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Регистрация', 'url' => ['/site/signup'], 'visible'=>Yii::$app->user->isGuest],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Войти', 'url' => ['/site/login']]
             ) : (
@@ -50,7 +49,7 @@ AppAsset::register($this);
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
                 . Html::submitButton(
                     'Выйти',
-                    ['class' => 'btn btn-link logout']
+                    ['class' => 'btn text-success logout']
                 )
                 . Html::endForm()
                 . '</li>'
