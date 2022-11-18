@@ -1,10 +1,5 @@
 <?php
 
-$link = mysqli_connect("localhost", "root", "", "Trial_it");
-$sql = "SELECT * FROM Task";
-$result = mysqli_query($link, $sql);
-$row = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
 use app\models\Task;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -24,25 +19,25 @@ $this->title = 'Челленджи';
         <h1><?= Html::encode($this->title) ?></h1>
 
         <p style="margin-top: 9px">
-            <?= Html::a('Создать новый', ['create'], ['class' => 'btn btn-success']) ?>
+            <?= Html::a('Создать новый', ['create'], ['class' => 'btn btn-success'])?>
         </p>
     </div>
 
-    <?php foreach($row as $item){
-            if ($item["difficulty"] == 0) $item["difficulty"] = "Не указана";
-            if ($item["difficulty"] == 1) $item["difficulty"] = "Легкий";
-            if ($item["difficulty"] == 2) $item["difficulty"] = "Средний";
-            if ($item["difficulty"] == 3) $item["difficulty"] = "Сложный";
-            if ($item["prize"] == 0) $item["prize"] = "Не указана";
-            if ($item["prize"] == 1) $item["prize"] = "4";
-            if ($item["prize"] == 2) $item["prize"] = "5";
-            if ($item["prize"] == 0) $item["discipline"] = "Не указана";
-            if ($item["prize"] == 1) $item["discipline"] = "Высшая математика";
-            if ($item["prize"] == 2) $item["discipline"] = "Программирование С#";
-            if ($item["prize"] == 4) $item["discipline"] = "Программирование С++";
-            if ($item["prize"] == 5) $item["discipline"] = "Программирование Python";
-            if ($item["prize"] == 6) $item["discipline"] = "Графический дизайн";
-            if ($item["prize"] == 6) $item["discipline"] = "Физическая культура";
+    <?php foreach($tasks as $item){
+            if ($item->difficulty == 0) $item->difficulty = "Не указана";
+            if ($item->difficulty == 1) $item->difficulty = "Легкий";
+            if ($item->difficulty == 2) $item->difficulty = "Средний";
+            if ($item->difficulty == 3) $item->difficulty = "Сложный";
+            if ($item->prize == 0) $item->prize = "Не указана";
+            if ($item->prize == 1) $item->prize = "4";
+            if ($item->prize == 2) $item->prize = "5";
+            if ($item->discipline == 0) $item->discipline = "Не указана";
+            if ($item->discipline == 1) $item->discipline = "Высшая математика";
+            if ($item->discipline == 2) $item->discipline = "Программирование С#";
+            if ($item->discipline == 4) $item->discipline = "Программирование С++";
+            if ($item->discipline == 5) $item->discipline = "Программирование Python";
+            if ($item->discipline == 6) $item->discipline = "Графический дизайн";
+            if ($item->discipline == 6) $item->discipline = "Физическая культура";
     ?>
         <div style="
         width: 1110px;
@@ -58,20 +53,21 @@ $this->title = 'Челленджи';
         justify-content: space-between;
         ">
             <div style="display: flex;  flex-direction: row; width: 1010px; height: 40px; justify-content: space-between;">
-                <h3 style="font-size: 28px;"><?=$item["name"]?></h3>
+                <h3 style="font-size: 28px;"><?=$item->name?></h3>
                 <div style="width: 200px;">
-                    <a class="btn btn-outline-danger" href="http://sadf:8080/web/index.php?r=task%2Fdelete&id=<?=$item["id"]?>" title="delete" aria-label="Delete"
-                       data-pjax="0" data-confirm="Вы действительно хотите удалить челлендж: <?=$item["name"]?> ?" data-method="post">Удалить</a>
-                    <a class="btn btn-outline-dark">Подробнее</a>
+                    <a class="btn btn-outline-danger" href="http://sadf:8080/web/index.php?r=task%2Fdelete&id=<?=$item->id?>" title="delete" aria-label="Delete"
+                       data-pjax="0" data-confirm="Вы действительно хотите удалить челлендж:  ?" data-method="post">Удалить</a>
+                    <a class="btn btn-outline-dark" href="http://sadf:8080/web/index.php?r=task%2Fupdate&id=<?=$item->id?>" title="delete" aria-label="Delete"
+                       data-pjax="0" data-method="post">Изменить</a>
                 </div>
             </div>
-            <p style="font-size: 18px; margin-top: 10px; width: 900px;"><?=$item["description"]?></p>
+            <p style="font-size: 18px; margin-top: 10px; width: 900px;"><?=$item->description?></p>
             <div style="display: flex;  flex-direction: row; width: 1010px; height: 30px; justify-content: space-between;">
                 <div style="display: flex;  flex-direction: row; width: 300px; height: 30px; justify-content: space-between;">
-                    <p style="font-size: 14px;">Уровень сложности:  <?=$item["difficulty"]?></p>
-                    <p style="font-size: 14px;">Оценка - <?=$item["prize"]?></p>
+                    <p style="font-size: 14px;">Уровень сложности: <?=$item->difficulty?> </p>
+                    <p style="font-size: 14px;">Оценка - <?=$item->prize?></p>
                 </div>
-                <p style="font-size: 14px;"><?=$item["user"]?></p>
+                <p style="font-size: 14px;"><?=$item->user?></p>
             </div>
         </div>
     <?php }?>

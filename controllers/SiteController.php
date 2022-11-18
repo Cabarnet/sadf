@@ -141,4 +141,34 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    
+    public function actionRole(){
+        /*
+        $admin = Yii::$app->authManager->createRole('admin');
+        $admin->description = 'Admin';
+        Yii::$app->authManager->add($admin);
+
+        $user = Yii::$app->authManager->createRole('user');
+        $user->description = 'Пользователь';
+        Yii::$app->authManager->add($user);
+
+        $teach = Yii::$app->authManager->createRole('teach');
+        $teach->description = 'Преподователь';
+        Yii::$app->authManager->add($teach);
+
+        $permit = Yii::$app->authManager->createPermission('canAdmin');
+        $permit->description = 'Вход в админа';
+        Yii::$app->authManager->add($permit);
+
+        $role_a = Yii::$app->authManager->getRole('admin');
+        $role_t = Yii::$app->authManager->getRole('teach');
+        $permit = Yii::$app->authManager->getPermission('canAdmin');
+        Yii::$app->authManager->addChild($role_a, $permit);
+        Yii::$app->authManager->addChild($role_t, $permit);
+
+        $userRole = Yii::$app->authManager->getRole('admin');
+        Yii::$app->authManager->assign($userRole, Yii::$app->user->getId());*/
+
+        return 111;
+    }
 }

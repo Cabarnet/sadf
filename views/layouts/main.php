@@ -49,7 +49,7 @@ AppAsset::register($this);
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
                 . Html::submitButton(
                     'Выйти',
-                    ['class' => 'btn text-success logout']
+                    ['class' => 'btn text-dark logout']
                 )
                 . Html::endForm()
                 . '</li>'

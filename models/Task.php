@@ -32,9 +32,9 @@ class Task extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user', 'name', 'description', 'difficulty', 'prize', 'discipline', 'chat'], 'required'],
+            [['user', 'name', 'description', 'difficulty', 'prize', 'discipline'], 'required'],
             [['description'], 'string'],
-            [['user', 'name', 'difficulty', 'discipline', 'chat'], 'string', 'max' => 255],
+            [['user', 'name', 'difficulty', 'discipline'], 'string', 'max' => 255],
             [['prize'], 'string', 'max' => 2],
         ];
     }
@@ -52,7 +52,6 @@ class Task extends \yii\db\ActiveRecord
             'difficulty' => 'Difficulty',
             'prize' => 'Prize',
             'discipline' => 'Discipline',
-            'chat' => 'Chat',
         ];
     }
 }
