@@ -29,7 +29,7 @@ class Prize extends \yii\db\ActiveRecord
     {
         return [
             [['prize'], 'required'],
-            [['prize'], 'integer'],
+            [['prize'], 'string', 'max' => 16],
         ];
     }
 

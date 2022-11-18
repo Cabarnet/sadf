@@ -42,6 +42,7 @@ AppAsset::register($this);
             ['label' => 'Челленджи', 'url' => ['task/index']],
             ['label' => 'Кто мы?', 'url' => ['/site/about']],
             ['label' => 'Регистрация', 'url' => ['/site/signup'], 'visible'=>Yii::$app->user->isGuest],
+            ['label' => 'Личный кабинет', 'url' => ['user/index'], 'visible'=>!Yii::$app->user->isGuest],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Войти', 'url' => ['/site/login']]
             ) : (

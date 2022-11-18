@@ -10,43 +10,18 @@ use yii\grid\GridView;
 /** @var app\models\UserSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Users';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Личный кабинет';
 ?>
 <div class="user-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 style="margin-top: 20px;"><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'username',
-            'auth_key',
-            'password_hash',
-            'password_reset_token',
-            //'email:email',
-            //'status',
-            //'created_at',
-            //'updated_at',
-            //'role',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, User $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
-            ],
-        ],
-    ]); ?>
-
+    <p style="font-size: 20px; margin-top: 30px; margin-bottom: 0px;">Фамилия Имя Отчество: </p>
+    <h3 style="font-size: 28px;"><?=Yii::$app->user->identity->username;?></h3>
+    <p style="font-size: 20px; margin-top: 30px; margin-bottom: 0px;">Почта: </p>
+    <h3 style="font-size: 28px;  margin-bottom: 30px;"><?=Yii::$app->user->identity->email;?></h3>
+    
+    <!--<a class="btn btn-outline-success" href="http://sadf:8080/web/index.php?r=user%2Fupdate&id=<?=Yii::$app->user->id?>" title="update" aria-label="update"
+    data-pjax="0" data-method="post">Изменить информацию профиля</a>-->
 
 </div>

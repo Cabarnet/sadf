@@ -3,6 +3,9 @@
 namespace app\controllers;
 
 use app\models\Task;
+use app\models\Prize;
+use app\models\Discipline;
+use app\models\Difficulty;
 use app\models\TaskSearch;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -24,12 +27,22 @@ class TaskController extends Controller
             [
                 'access' => [
                     'class' => AccessControl::className(),
-                    'only' => ['create'],
+                    'only' => ['create', 'delete', 'update'],
                     'rules' => [
                         [
                             'actions' => ['create'],
                             'allow' => true,
-                            'roles' => ['@'],
+                            'roles' => ['canAdmin'],
+                        ],
+                        [
+                            'actions' => ['delete'],
+                            'allow' => true,
+                            'roles' => ['canAdmin'],
+                        ],
+                        [
+                            'actions' => ['update'],
+                            'allow' => true,
+                            'roles' => ['canAdmin'],
                         ],
                     ],
                 ],
@@ -51,7 +64,11 @@ class TaskController extends Controller
     public function actionIndex()
     {
         $tasks = Task::find()->all();
-        return $this->render('index',['tasks'=> $tasks]);
+        $prize = Prize::find()->all();
+        $discipline = Discipline::find()->all();
+        $difficulty = Difficulty::find()->all();
+
+        return $this->render('index',['tasks'=> $tasks, 'prize'=> $prize, 'discipline'=> $discipline, 'difficulty'=> $difficulty]);
     }
 
     /**
